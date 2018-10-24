@@ -21,5 +21,10 @@
   },
   "devDependencies": {
     "node-lambda": "^0.9.0"
+  },
+  "dependencies": {
+    "aws-sdk": "^2.341.0",
+    "cryptlib": "^1.0.3",
+    "dotenv": "^6.1.0"
   }
 }
