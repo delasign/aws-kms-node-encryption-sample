@@ -3,22 +3,6 @@ require('dotenv').config();
 
 exports.handler = function(event, context, callback) {
 
-    // encrypt(event.body.text, function(err, res){
-    //     if(err) {
-    //       callback(err, null);
-    //     }
-    //     else {
-    //       decrypt(res, function(err, res){
-    //         if(err){
-    //           callback(err, null);
-    //         }
-    //         else {
-    //           callback(null, res);
-    //         }
-    //       })
-    //     }
-    // });
-
     encrypt(event.body.text)
     .then((res) => {
       decrypt(res)
@@ -80,21 +64,3 @@ function decrypt(buffer) {
         });
     });
 }
-
-
-// CRYPT LIB EXAMPLE
-// var cryptLib = require('cryptlib')
-// exports.handler = function(event, context, callback) {
-//
-//   var iv = cryptLib.generateRandomIV(16)
-//   var key = cryptLib.getHashSha256('my secret key', 32)
-//   var encryptedText = cryptLib.encrypt('This is the text to be encrypted', key, iv)
-//
-//   console.log("IV : ", iv);
-//   console.log("ENCRYPTED TEXT : ", encryptedText);
-//
-//   var originalText = cryptLib.decrypt(encryptedText, key, iv);
-//   console.log("ORIGINAL TEXT : ", originalText);
-//
-//   callback(null, 1);
-// };
