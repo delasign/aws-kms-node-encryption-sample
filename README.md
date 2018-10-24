@@ -1,4 +1,4 @@
-# aws-kms-encryption-sample
+# aws-kms-node-encryption-sample
 
 ## Setup your KMS keys
 
